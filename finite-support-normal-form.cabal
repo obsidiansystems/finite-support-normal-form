@@ -1,0 +1,45 @@
+cabal-version:      3.0
+name:               finite-support-normal-form
+version:            0.1.0.0
+synopsis:           Total maps with finite support in a normal form
+
+-- description:
+homepage:
+
+-- bug-reports:
+license:            BSD-3-Clause
+license-file:       LICENSE
+author:             John Ericson
+maintainer:         maintainer@Obsidian.Systems
+
+-- copyright:
+category:           Data
+build-type:         Simple
+extra-source-files: CHANGELOG.md
+
+library
+    exposed-modules:  Data.Map.Total.FSNF
+                    -- , Data.Map.NonEmpty.Total.FSNF
+                    -- , Data.IntMap.Total.FSNF
+                    -- , Data.IntMap.NonEmpty.Total.FSNF
+
+    -- Modules included in this library but not exported.
+    -- other-modules:
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    build-depends:    base ^>=4.14.3.0
+                    , containers ^>= {0.5.9, 0.6}
+                    , these ^>= {1, 1.1}
+                    , semialign ^>= {1, 1.1}
+                    , lens >= 4.7 && < 5
+                    , nonempty-containers ^>=0.3.4.4
+    hs-source-dirs:   src
+    default-language: Haskell2010
+
+test-suite finite-support-normal-form-test
+    default-language: Haskell2010
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    main-is:          MyLibTest.hs
+    build-depends:    base ^>=4.14.3.0
